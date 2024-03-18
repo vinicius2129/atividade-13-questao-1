@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesquisar Livro</title>
+</head>
+<body>
+  <div class="back-ground-h1">
+    <h1>Pesquisar Livro</h1>
+     </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <form id="pesquisa">
+    <label id="Titulo" for="inp_titulo">Título: </label><br>
+    <input type="text" id="inp_titulo" placeholder="Ex.: Livro A">
+    <input type="radio" name="escolha_livro" id="escolha_livro_titulo" value="titulo" checked>
+    <br><br>
+    <label id="Ano" for="inp_ano">Ano: </label><br>
+    <input type="text" id="inp_ano" placeholder="Ex.: 2014" disabled>
+    <input type="radio" name="escolha_livro" id="escolha_livro_ano" value="ano">
+    <br><br>
+    <input id="pesquisar" type="submit" value="Pesquisar">
+  </form>
+
+  <h2>Lista</h2>
+ 
+
+  <% if (lista.length === 0) { %>
+    <p class="erro">Livro não encontrado</p>
+    <% } else { %>
+    <div class="lista">
+      <div class="tr">
+      
+        <div class="td cabecalho">ID</div>
+        <div class="td cabecalho">Ano</div>
+        <div class="td cabecalho">Titulo</div>
+        <div class="td cabecalho">Autor</div>
+      </div>
+
+      <% for (let i = 0; i < lista.length; i++) { %>
+        <div class="tr">
+          
+            <div class="td"><%= lista[i].id %></div>
+            <div class="td"><%= lista[i].ano %></div>
+            <div class="td"><%= lista[i].titulo %></div>
+            <div class="td"><%= lista[i].autor %></div>
+        </div>
+      <% } %>
+    </div>
+ 
+  <% } %>
+  <script src="/js/script.js"></script>
+</body>
+</html>
+
