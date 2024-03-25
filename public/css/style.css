@@ -10,6 +10,7 @@ h1{
   top: 39%;
 }
 h2{
+  width: 0px;
   position: relative;
   left: 2%;
   color: #ddd;
